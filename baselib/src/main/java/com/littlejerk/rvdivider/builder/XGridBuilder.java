@@ -6,14 +6,13 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
 
+import com.littlejerk.rvdivider.DividerHelper;
+
 import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
 import androidx.annotation.DimenRes;
 import androidx.annotation.DrawableRes;
 import androidx.core.content.ContextCompat;
-
-import com.littlejerk.rvdivider.DividerHelper;
-import com.littlejerk.rvdivider.decoration.XDividerDecoration;
 
 import static com.littlejerk.rvdivider.DividerHelper.NO_COLOR;
 
@@ -22,7 +21,7 @@ import static com.littlejerk.rvdivider.DividerHelper.NO_COLOR;
  * @Time : 2021/5/31 15:30
  * @Description : GridLayoutManager分割线构造器
  */
-public class XGridBuilder extends XDividerDecoration.Builder {
+public final class XGridBuilder extends XDividerDecoration.Builder {
 
     //分割线宽或高,mVLineSpacing||mHLineSpacing > mSpacing
     private int mVLineSpacing;

@@ -3,27 +3,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btn_LinearLayoutManager"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="LinearLayoutManager" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/purple_700"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:text="XRecyclerViewDivider"
+        android:textColor="@color/white" />
 
-    <Button
-        android:id="@+id/btn_GridLayoutManager"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="GridLayoutManager" />
 
-    <Button
-        android:id="@+id/btn_StaggeredGridLayoutManager"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="StaggeredGridLayoutManager" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_LinearLayoutManager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LinearLayoutManager" />
+
+        <Button
+            android:id="@+id/btn_GridLayoutManager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="GridLayoutManager" />
+
+        <Button
+            android:id="@+id/btn_StaggeredGridLayoutManager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="StaggeredGridLayoutManager" />
+    </LinearLayout>
+
+
+
 </LinearLayout>

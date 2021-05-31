@@ -1,4 +1,4 @@
-package com.littlejerk.rvdivider.decoration;
+package com.littlejerk.rvdivider.builder;
 
 
 import android.content.Context;
@@ -7,17 +7,15 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
+import com.littlejerk.rvdivider.DividerHelper;
+import com.littlejerk.rvdivider.decoration.LDecoration;
+
+import java.util.Objects;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
-
-import com.littlejerk.rvdivider.DividerHelper;
-import com.littlejerk.rvdivider.builder.XGridBuilder;
-import com.littlejerk.rvdivider.builder.XLinearBuilder;
-import com.littlejerk.rvdivider.builder.XStaggeredGridBuilder;
-
-import java.util.Objects;
 
 import static androidx.recyclerview.widget.RecyclerView.VERTICAL;
 import static com.littlejerk.rvdivider.DividerHelper.DividerType.LINEAR_VERTICAL;
@@ -28,12 +26,12 @@ import static com.littlejerk.rvdivider.DividerHelper.getDividerType;
  * @Time : 2021/5/31 15:27
  * @Description : RecyclerView分割线Decoration
  */
-public final class XDividerDecoration extends RecyclerView.ItemDecoration {
+final class XDividerDecoration extends RecyclerView.ItemDecoration {
 
     private Builder mBuilder;
     private int mFullSpanPosition = -1;
 
-    protected XDividerDecoration() {
+    private XDividerDecoration() {
     }
 
     /**
@@ -42,7 +40,7 @@ public final class XDividerDecoration extends RecyclerView.ItemDecoration {
      * @param builder
      * @return
      */
-    protected XDividerDecoration bind(Builder builder) {
+    private XDividerDecoration bind(Builder builder) {
         mBuilder = builder;
         return this;
     }
@@ -264,7 +262,7 @@ public final class XDividerDecoration extends RecyclerView.ItemDecoration {
         //最后分割线
         int count = parent.getAdapter().getItemCount();
         int itemPosition = parent.getChildAdapterPosition(view);
-        if (builder.getOnItemNoDivider() != null) {
+        if (builder.getOnItemNoDivider() != null && builder.getOnItemNoDivider().getNoDividerPosition() != null) {
             int[] noDivider = builder.getOnItemNoDivider().getNoDividerPosition();
             if (DividerHelper.isContains(noDivider, itemPosition)) {
                 outRect.set(0, 0, 0, 0);
@@ -828,15 +826,14 @@ public final class XDividerDecoration extends RecyclerView.ItemDecoration {
 
     }
 
-
     /**
      * 提供初始化XDividerDecoration
      */
-    public static class Builder {
+    protected static class Builder {
         //上下文
         protected Context mContext;
 
-        public Builder(Context context) {
+        protected Builder(Context context) {
             this.mContext = context;
         }
 
@@ -850,6 +847,5 @@ public final class XDividerDecoration extends RecyclerView.ItemDecoration {
         }
 
     }
-
 
 }
