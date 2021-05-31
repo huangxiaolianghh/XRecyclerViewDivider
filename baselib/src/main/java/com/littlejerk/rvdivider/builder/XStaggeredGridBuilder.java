@@ -4,17 +4,16 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.util.TypedValue;
 
-import androidx.annotation.DimenRes;
-
 import com.littlejerk.rvdivider.DividerHelper;
-import com.littlejerk.rvdivider.decoration.XDividerDecoration;
+
+import androidx.annotation.DimenRes;
 
 /**
  * @Author : HHotHeart
  * @Time : 2021/5/31 15:38
  * @Description : StaggeredGridLayoutManager分割线构造器（不支持draw颜色设置）
  */
-public class XStaggeredGridBuilder extends XDividerDecoration.Builder {
+public final class XStaggeredGridBuilder extends XDividerDecoration.Builder {
 
     //分割线宽或高,mVLineSpacing||mHLineSpacing > mSpacing
     private int mVLineSpacing;

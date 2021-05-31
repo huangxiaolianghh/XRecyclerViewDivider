@@ -6,16 +6,15 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
 
+import com.littlejerk.rvdivider.DividerHelper;
+import com.littlejerk.rvdivider.decoration.ILDecoration;
+import com.littlejerk.rvdivider.decoration.LDecoration;
+
 import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
 import androidx.annotation.DimenRes;
 import androidx.annotation.DrawableRes;
 import androidx.core.content.ContextCompat;
-
-import com.littlejerk.rvdivider.DividerHelper;
-import com.littlejerk.rvdivider.decoration.ILDecoration;
-import com.littlejerk.rvdivider.decoration.LDecoration;
-import com.littlejerk.rvdivider.decoration.XDividerDecoration;
 
 
 /**
@@ -23,7 +22,7 @@ import com.littlejerk.rvdivider.decoration.XDividerDecoration;
  * @Time : 2021/5/31 15:25
  * @Description : LinearLayoutManager分割线构造器
  */
-public class XLinearBuilder extends XDividerDecoration.Builder implements ILDecoration {
+public final class XLinearBuilder extends XDividerDecoration.Builder implements ILDecoration {
 
     //默认分割线的宽（高）度,单位像素px
     private int mSpacing = DividerHelper.dp2px(1);
