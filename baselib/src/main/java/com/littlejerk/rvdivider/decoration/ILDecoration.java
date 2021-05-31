@@ -8,10 +8,9 @@ import androidx.annotation.DimenRes;
 import androidx.annotation.DrawableRes;
 
 /**
- * @author : Huanghuahong
- * @e-mail : 2550754753@qq.com
- * @date : 2021/5/30 17:03
- * @desc : 描述
+ * @Author : HHotHeart
+ * @Time : 2021/5/31 16:07
+ * @Description : 接口类
  */
 public interface ILDecoration {
 

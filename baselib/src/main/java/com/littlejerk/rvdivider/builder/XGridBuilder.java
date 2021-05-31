@@ -6,22 +6,21 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
 
-import com.littlejerk.rvdivider.DividerHelper;
-import com.littlejerk.rvdivider.decoration.XDividerDecoration;
-
 import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
 import androidx.annotation.DimenRes;
 import androidx.annotation.DrawableRes;
 import androidx.core.content.ContextCompat;
 
+import com.littlejerk.rvdivider.DividerHelper;
+import com.littlejerk.rvdivider.decoration.XDividerDecoration;
+
 import static com.littlejerk.rvdivider.DividerHelper.NO_COLOR;
 
 /**
- * @author : Huanghuahong
- * @e-mail : 2550754753@qq.com
- * @date : 2021/4/30 0:19
- * @desc : Grid分割线建造者模式
+ * @Author : HHotHeart
+ * @Time : 2021/5/31 15:30
+ * @Description : GridLayoutManager分割线构造器
  */
 public class XGridBuilder extends XDividerDecoration.Builder {
 
@@ -42,9 +41,6 @@ public class XGridBuilder extends XDividerDecoration.Builder {
     private Drawable mHLineDividerDrawable;
     private Drawable mDividerDrawable;
 
-    private boolean mIsIgnoreFullSpan = false;
-
-
     public XGridBuilder(Context context) {
         super(context);
     }
@@ -54,7 +50,7 @@ public class XGridBuilder extends XDividerDecoration.Builder {
     }
 
     /**
-     * 设置水平线距离
+     * 设置分割线间距
      *
      * @param dpValueSpacing
      * @return
@@ -65,7 +61,7 @@ public class XGridBuilder extends XDividerDecoration.Builder {
     }
 
     /**
-     * 设置水平线距离
+     * 设置分割线间距
      *
      * @param dimenResId
      * @return
@@ -81,7 +77,7 @@ public class XGridBuilder extends XDividerDecoration.Builder {
     }
 
     /**
-     * 设置竖直线距离
+     * 设置竖直线间距
      *
      * @param dpValueVLineSpacing
      * @return
@@ -102,7 +98,7 @@ public class XGridBuilder extends XDividerDecoration.Builder {
     }
 
     /**
-     * 设置水平线距离
+     * 设置水平线间距
      *
      * @param dpValueHLineSpacing
      * @return
@@ -233,15 +229,6 @@ public class XGridBuilder extends XDividerDecoration.Builder {
      */
     protected int getColor() {
         return mColor;
-    }
-
-    public boolean isIgnoreFullSpan() {
-        return mIsIgnoreFullSpan;
-    }
-
-    public XGridBuilder setIgnoreFullSpan(boolean ignoreFullSpan) {
-        mIsIgnoreFullSpan = ignoreFullSpan;
-        return this;
     }
 
     /**
