@@ -7,27 +7,26 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-import com.littlejerk.rvdivider.DividerHelper;
-import com.littlejerk.rvdivider.builder.XGridBuilder;
-import com.littlejerk.rvdivider.builder.XLinearBuilder;
-
-import java.util.Objects;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.littlejerk.rvdivider.DividerHelper;
+import com.littlejerk.rvdivider.builder.XGridBuilder;
+import com.littlejerk.rvdivider.builder.XLinearBuilder;
+import com.littlejerk.rvdivider.builder.XStaggeredGridBuilder;
+
+import java.util.Objects;
+
 import static androidx.recyclerview.widget.RecyclerView.VERTICAL;
 import static com.littlejerk.rvdivider.DividerHelper.DividerType.LINEAR_VERTICAL;
 import static com.littlejerk.rvdivider.DividerHelper.getDividerType;
 
-
 /**
- * @author : Huanghuahong
- * @e-mail : 2550754753@qq.com
- * @date : 2021/4/28 0:10
- * @desc : RecyclerView分割线
+ * @Author : HHotHeart
+ * @Time : 2021/5/31 15:27
+ * @Description : RecyclerView分割线Decoration
  */
 public final class XDividerDecoration extends RecyclerView.ItemDecoration {
 
@@ -67,10 +66,8 @@ public final class XDividerDecoration extends RecyclerView.ItemDecoration {
                 drawDividerForHGrid(c, parent, (XGridBuilder) mBuilder);
                 break;
             case STAGGERED_GRID_HORIZONTAL://瀑布流的drawable用的不多，暂时不支持，只是单纯设置分割线
-//                DividerHelper.drawDividerForHGrid(c, parent, (GridBuilder) mBuilder);
                 break;
             case STAGGERED_GRID_VERTICAL:
-//                DividerHelper.drawDividerForVGrid(c, parent, (GridBuilder) mBuilder);
                 break;
             case UNKNOWN:
             default:
@@ -96,7 +93,7 @@ public final class XDividerDecoration extends RecyclerView.ItemDecoration {
                 break;
             case STAGGERED_GRID_VERTICAL:
             case STAGGERED_GRID_HORIZONTAL:
-                getItemOffsetsForStaggeredGrid(outRect, view, parent, (XGridBuilder) mBuilder);
+                getItemOffsetsForStaggeredGrid(outRect, view, parent, (XStaggeredGridBuilder) mBuilder);
                 break;
             case UNKNOWN:
             default:
@@ -573,7 +570,6 @@ public final class XDividerDecoration extends RecyclerView.ItemDecoration {
      * 为Grid绘制有Drawable的线(GridLayoutManage方向为竖直H方向)
      */
     protected void drawDividerForHGrid(Canvas c, RecyclerView parent, XGridBuilder builder) {
-        //根据我们的习惯：
         //行实际上是LayoutManager的列
         //列实际上是LayoutManager的行
         //layoutManage的方向是水平
@@ -739,7 +735,7 @@ public final class XDividerDecoration extends RecyclerView.ItemDecoration {
      */
     public void getItemOffsetsForStaggeredGrid(Rect outRect, View view,
                                                RecyclerView parent,
-                                               XGridBuilder builder) {
+                                               XStaggeredGridBuilder builder) {
         Objects.requireNonNull(builder, "GridLinearLayoutManage分割线必须设置GridBuilder");
         int hLineSpacing = builder.getHLineSpacing() == 0 ? builder.getSpacing() : builder.getHLineSpacing();
         int vLineSpacing = builder.getVLineSpacing() == 0 ? builder.getSpacing() : builder.getVLineSpacing();

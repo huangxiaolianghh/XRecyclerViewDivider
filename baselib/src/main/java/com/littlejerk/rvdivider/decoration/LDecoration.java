@@ -6,17 +6,15 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
 
-import com.littlejerk.rvdivider.DividerHelper;
-
 import androidx.core.content.ContextCompat;
 
-/**
- * @author : Huanghuahong
- * @e-mail : 2550754753@qq.com
- * @date : 2021/5/30 17:03
- * @desc : 线性item分割线修饰类
- */
+import com.littlejerk.rvdivider.DividerHelper;
 
+/**
+ * @Author : HHotHeart
+ * @Time : 2021/5/31 16:07
+ * @Description : 线性item分割线修饰类
+ */
 public class LDecoration implements ILDecoration {
     private Context mContext;
     //分割线左右内边距（垂直）

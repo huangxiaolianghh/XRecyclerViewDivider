@@ -6,6 +6,12 @@ import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.View;
 
+import androidx.annotation.IntDef;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+
 import com.littlejerk.rvdivider.builder.XLinearBuilder;
 import com.littlejerk.rvdivider.decoration.LDecoration;
 
@@ -13,25 +19,18 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.Objects;
 
-import androidx.annotation.IntDef;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
-
 import static androidx.recyclerview.widget.LinearLayoutManager.VERTICAL;
 
+
 /**
- * author : Huanghuahong
- * e-mail : 2550754753@qq.com
- * date   : 2021/4/28 23:37
- * desc   :描述
+ * @Author : HHotHeart
+ * @Time : 2021/5/31 16:03
+ * @Description : 设置分割线帮助类
  */
 public final class DividerHelper {
 
     private static final String TAG = "DividerHelper";
     public static final int NO_COLOR = Color.TRANSPARENT;
-
 
     private DividerHelper() {
         throw new UnsupportedOperationException("u can't instantiate me...");
@@ -39,7 +38,7 @@ public final class DividerHelper {
 
     /**
      * 是否为最后一行（Vertical）
-     * 是否为最后一列（horizontal）
+     * 是否为最后一列（Horizontal）
      *
      * @param parent
      * @param childCount
