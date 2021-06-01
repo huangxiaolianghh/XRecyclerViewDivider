@@ -4,6 +4,10 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.RadioButton;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.littlejerk.rvdivider.builder.XLinearBuilder;
@@ -14,10 +18,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
 import java.util.List;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 public class LinearActivity extends AppCompatActivity {
 
@@ -105,7 +105,8 @@ public class LinearActivity extends AppCompatActivity {
 //                        }
                         return null;
                     }
-                });
+                })
+                ;
     }
 
     /**

@@ -734,14 +734,14 @@ final class XDividerDecoration extends RecyclerView.ItemDecoration {
     public void getItemOffsetsForStaggeredGrid(Rect outRect, View view,
                                                RecyclerView parent,
                                                XStaggeredGridBuilder builder) {
-        Objects.requireNonNull(builder, "GridLinearLayoutManage分割线必须设置GridBuilder");
+        Objects.requireNonNull(builder, "GridLinearLayoutManage分割线必须设置XStaggeredGridBuilder");
         int hLineSpacing = builder.getHLineSpacing() == 0 ? builder.getSpacing() : builder.getHLineSpacing();
         int vLineSpacing = builder.getVLineSpacing() == 0 ? builder.getSpacing() : builder.getVLineSpacing();
 
         int lastPosition = Objects.requireNonNull(parent.getAdapter(), "RecyclerView请设置Adapter").getItemCount() - 1;
         int position = parent.getChildAdapterPosition(view);
         if (position > lastPosition) return;
-        // 减掉不设置间距的position,得到从0开始的position 1<=position
+
         StaggeredGridLayoutManager layoutManager = (StaggeredGridLayoutManager) parent.getLayoutManager();
         Objects.requireNonNull(layoutManager, "RecyclerView LayoutManager请设置StaggeredGridLayoutManager");
         // 瀑布流获取列方式不一样
