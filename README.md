@@ -2,7 +2,7 @@
 [![](https://jitpack.io/v/HHotHeart/XRecyclerViewDivider.svg)](https://jitpack.io/#HHotHeart/XRecyclerViewDivider)
 
 XRecyclerViewDivider是一个功能十分强大且全面的RecyclerView 分割线库，使用建造者模式初始化Decoration,链式调用即可绘制你所需要的分割线样式，间接减少重复性代码，主要有三个建造者：
-[XLinearBuilder](https://github.com/HHotHeart/XRecyclerViewDivider)、[XGridBuilder](https://github.com/HHotHeart/XRecyclerViewDivider)、[XStaggeredGridBuilder](https://github.com/HHotHeart/XRecyclerViewDivider)
+[XLinearBuilder](https://github.com/HHotHeart/XRecyclerViewDivider/blob/master/baselib/src/main/java/com/littlejerk/rvdivider/builder/XLinearBuilder.java)、[XGridBuilder](https://github.com/HHotHeart/XRecyclerViewDivider/blob/master/baselib/src/main/java/com/littlejerk/rvdivider/builder/XGridBuilder.java)、[XStaggeredGridBuilder](https://github.com/HHotHeart/XRecyclerViewDivider/blob/master/baselib/src/main/java/com/littlejerk/rvdivider/builder/XStaggeredGridBuilder.java)
 它们分别为LinearLayoutManager、GridLayoutManager、StaggeredGridLayoutManager绘制不一样的分割线。
 
 ## 项目引入该库
@@ -220,3 +220,5 @@ mIsIgnoreFullSpan| 边界绘制是否忽略FullSpan的情况，默认false
 ## 结语
 
 使用中有问题或没有实现的功能都可以反馈给我，我一定会尽量满足大家的需求。希望这个库能够帮到大家，欢迎star~。
+
+[文章博客](https://blog.csdn.net/HHHceo/article/details/117453495)
