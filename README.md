@@ -145,6 +145,7 @@ LDecoration主要是设置某条分割线的属性，如果设置了setPadding�
  * 支持设置横竖交叉处的归属（属于竖向或横向）
 
 XGridBuilder属性表格
+
 属性| 意义
 -------- | -----
 mSpacing| 分割线间距，默认0dp;可直接设置dp或dp对应的res
@@ -191,6 +192,7 @@ mDividerDrawable| 分割线的drawable,会被mVLineDividerDrawable或mHLineDivid
  * 支持设置FullSpan情况
 
 XStaggeredGridBuilder属性表格
+
 属性| 意义
 -------- | -----
 mSpacing| 分割线间距，默认0dp;可直接设置dp或dp对应的res
