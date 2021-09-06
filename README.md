@@ -1,4 +1,4 @@
-# <h1>Android ReycyclerView强大的分割线-XRecyclerViewDivider</h1>
+# Android ReycyclerView强大的分割线-XRecyclerViewDivider
 [![](https://jitpack.io/v/HHotHeart/XRecyclerViewDivider.svg)](https://jitpack.io/#HHotHeart/XRecyclerViewDivider)
 
 XRecyclerViewDivider是一个功能十分强大且全面的RecyclerView 分割线库，使用建造者模式初始化Decoration,链式调用即可绘制你所需要的分割线样式，间接减少重复性代码，主要有三个建造者：
@@ -68,8 +68,8 @@ dependencies {
  * 支持设置不显示哪些item分割线
  * 支持定制某个item的分割线（包括padding、color、drawable、设置边界等）
 
+XLinearBuilder属性表格
 
-<font face="微软雅黑" >XLinearBuilder属性表格
 属性| 意义
 -------- | -----
 mSpacing| 分割线间距，默认1dp;可直接设置dp或dp对应的res
@@ -89,7 +89,7 @@ LDecoration主要是设置某条分割线的属性，如果设置了setPadding�
 
 基本使用：
 ```java
-  new XLinearBuilder(this)
+        new XLinearBuilder(this)
                 //分割线间距，支持float dp 和DimenRes dp
                 .setSpacing(4f)
                 .setShowFirstTopLine(true)
@@ -114,7 +114,7 @@ LDecoration主要是设置某条分割线的属性，如果设置了setPadding�
 如果想全部绘制边沿分割线，可这样设置：
 
 ```java
-        return new XLinearBuilder(this)
+        new XLinearBuilder(this)
                 //分割线间距，支持float dp 和DimenRes dp
                 .setSpacing(4f)
                 .setShowFirstTopLine(true)
@@ -144,7 +144,7 @@ LDecoration主要是设置某条分割线的属性，如果设置了setPadding�
  * 支持SpanSizeLookup（不规则的Grid）
  * 支持设置横竖交叉处的归属（属于竖向或横向）
 
-<font face="微软雅黑" >XGridBuilder属性表格
+XGridBuilder属性表格
 属性| 意义
 -------- | -----
 mSpacing| 分割线间距，默认0dp;可直接设置dp或dp对应的res
@@ -162,7 +162,7 @@ mDividerDrawable| 分割线的drawable,会被mVLineDividerDrawable或mHLineDivid
 基本使用：
 
 ```java
-        return new XGridBuilder(this)
+        new XGridBuilder(this)
                 //分割线间距，支持float dp 和DimenRes dp
                 .setSpacing(2f)//这几个Spacing的优先级可看XGridBuilder说明
                 .setVLineSpacing(4f)
@@ -181,7 +181,7 @@ mDividerDrawable| 分割线的drawable,会被mVLineDividerDrawable或mHLineDivid
                 .setIncludeEdge(true)
                 //竖直和水平分割线交叉处绘制的是竖直分割线颜色（交叉处属于竖直分割线）
                 .setVerticalIncludeEdge(true)
-                ;
+        ;
 ```
 
 ### 3.StaggeredGridLayoutManager
@@ -203,7 +203,7 @@ mIsIgnoreFullSpan| 边界绘制是否忽略FullSpan的情况，默认false
 基本使用：
 
 ```java
-        return new XStaggeredGridBuilder(this)
+        new XStaggeredGridBuilder(this)
                 //分割线间距，支持float dp 和DimenRes dp
                 .setSpacing(2f)//这几个Spacing的优先级可看XGridBuilder说明
                 .setVLineSpacing(4f)
@@ -212,7 +212,7 @@ mIsIgnoreFullSpan| 边界绘制是否忽略FullSpan的情况，默认false
                 .setIncludeEdge(true)
                 //是否忽略FullSpan的情况
                 .setIgnoreFullSpan(true)
-                ;
+        ;
 ```
 
 感谢：[ByRecyclerView](https://github.com/youlookwhat/ByRecyclerView)，采纳了其对FullSpan处理的一些思想。
