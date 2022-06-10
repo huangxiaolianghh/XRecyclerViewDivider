@@ -1,12 +1,7 @@
 package com.littlejerk.xrecyclerviewdivider;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.RadioButton;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
@@ -18,6 +13,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
 import java.util.List;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class LinearActivity extends AppCompatActivity {
 
@@ -52,7 +51,6 @@ public class LinearActivity extends AppCompatActivity {
                 recyclerView.addItemDecoration(bindXLinear().build());
                 mAdapter = new LinearAdapter(R.layout.item_linear_horizontal_list, getData());
                 recyclerView.setAdapter(mAdapter);
-
             }
         });
 
@@ -71,7 +69,7 @@ public class LinearActivity extends AppCompatActivity {
                 .setSpacing(2f)
                 .setShowFirstTopLine(true)
                 .setShowLastLine(true)
-                .setColor(Color.BLACK)
+//                .setColor(Color.BLACK)
                 //可设置颜色和drawable,drawable>color
 //                .setColorRes(R.color.white)
 //                .setDrawable(new ColorDrawable(Color.WHITE))
@@ -121,7 +119,7 @@ public class LinearActivity extends AppCompatActivity {
     }
 
 
-    public class LinearAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
+    public static class LinearAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
 
         public LinearAdapter(int layoutResId, @Nullable List<String> data) {
             super(layoutResId, data);
@@ -135,7 +133,7 @@ public class LinearActivity extends AppCompatActivity {
 
 
     public List<String> getData() {
-        return Arrays.asList("1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1");
+        return Arrays.asList("1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1");
     }
 
 

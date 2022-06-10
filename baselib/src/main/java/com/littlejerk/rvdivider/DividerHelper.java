@@ -255,7 +255,7 @@ public final class DividerHelper {
         GRID_HORIZONTAL,
         STAGGERED_GRID_VERTICAL,
         STAGGERED_GRID_HORIZONTAL,
-        UNKNOWN;
+        UNKNOWN
 
     }
 

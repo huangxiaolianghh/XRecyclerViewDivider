@@ -23,19 +23,29 @@ import static com.littlejerk.rvdivider.DividerHelper.NO_COLOR;
  */
 public final class XGridBuilder extends XDividerDecoration.Builder {
 
-    //分割线宽或高,mVLineSpacing||mHLineSpacing > mSpacing
+    /**
+     * 分割线宽或高,mVLineSpacing||mHLineSpacing > mSpacing
+     */
     private int mVLineSpacing;
     private int mHLineSpacing;
     private int mSpacing;
-    //是否需要画边界
+    /**
+     * 是否需要画边界
+     */
     private boolean mIsIncludeEdge;
-    //竖直方向分割线是否包括item角边的距离
+    /**
+     * 竖直方向分割线是否包括item角边的距离
+     */
     private boolean mVerticalIncludeEdge;
-    //分割线颜色,mVLineColor||mHLineColor > mColor
+    /**
+     * 分割线颜色,mVLineColor||mHLineColor > mColor
+     */
     private int mVLineColor = NO_COLOR;
     private int mHLineColor = NO_COLOR;
     private int mColor = NO_COLOR;
-    //分割线drawable,mVLineDividerDrawable||mHLineDividerDrawable > mDividerDrawable
+    /**
+     * 分割线drawable,mVLineDividerDrawable||mHLineDividerDrawable > mDividerDrawable
+     */
     private Drawable mVLineDividerDrawable;
     private Drawable mHLineDividerDrawable;
     private Drawable mDividerDrawable;
@@ -283,15 +293,6 @@ public final class XGridBuilder extends XDividerDecoration.Builder {
         mDividerDrawable = drawable;
         return this;
     }
-
-//    /**
-//     * 获取分割线Drawable
-//     *
-//     * @return
-//     */
-//    protected Drawable getDividerDrawable() {
-//        return mDividerDrawable;
-//    }
 
     /**
      * 获取分割线Drawable

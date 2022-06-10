@@ -52,7 +52,7 @@ final class XDividerDecoration extends RecyclerView.ItemDecoration {
         DividerHelper.DividerType type = getDividerType(parent);
         switch (type) {
             case LINEAR_HORIZONTAL:
-                drawVDividerForHLinear(c, parent, (XLinearBuilder) mBuilder);
+                drawDividerForHLinear(c, parent, (XLinearBuilder) mBuilder);
                 break;
             case LINEAR_VERTICAL:
                 drawDividerForVLinear(c, parent, (XLinearBuilder) mBuilder);
@@ -63,9 +63,9 @@ final class XDividerDecoration extends RecyclerView.ItemDecoration {
             case GRID_HORIZONTAL:
                 drawDividerForHGrid(c, parent, (XGridBuilder) mBuilder);
                 break;
-            case STAGGERED_GRID_HORIZONTAL://瀑布流的drawable用的不多，暂时不支持，只是单纯设置分割线
-                break;
+            case STAGGERED_GRID_HORIZONTAL:
             case STAGGERED_GRID_VERTICAL:
+                //瀑布流的drawable用的不多，暂时不支持，只是单纯设置分割线
                 break;
             case UNKNOWN:
             default:
@@ -178,7 +178,7 @@ final class XDividerDecoration extends RecyclerView.ItemDecoration {
      * @param parent
      * @param builder
      */
-    protected void drawVDividerForHLinear(Canvas c, RecyclerView parent, XLinearBuilder builder) {
+    protected void drawDividerForHLinear(Canvas c, RecyclerView parent, XLinearBuilder builder) {
         c.save();
         Objects.requireNonNull(parent.getAdapter(), "RecyclerView请设置Adapter");
         Objects.requireNonNull(builder, "LinearLayoutManager分割线必须设置LinearBuilder");
@@ -339,7 +339,9 @@ final class XDividerDecoration extends RecyclerView.ItemDecoration {
     private void drawHDividerForVGrid(Canvas c, RecyclerView parent, XGridBuilder builder) {
         Objects.requireNonNull(parent.getAdapter(), "RecyclerView请设置Adapter");
         Objects.requireNonNull(builder, "GridLinearLayoutManage分割线必须设置GridBuilder");
-        if (builder.getHLineDividerDrawable() == null) return;
+        if (builder.getHLineDividerDrawable() == null) {
+            return;
+        }
         int hLineSpacing = builder.getHLineSpacing() == 0 ? builder.getSpacing() : builder.getHLineSpacing();
         int vLineSpacing = builder.getVLineSpacing() == 0 ? builder.getSpacing() : builder.getVLineSpacing();
 
@@ -425,7 +427,9 @@ final class XDividerDecoration extends RecyclerView.ItemDecoration {
      */
     private void drawVDividerForVGrid(Canvas c, RecyclerView parent, XGridBuilder builder) {
         Objects.requireNonNull(parent.getAdapter(), "RecyclerView请设置Adapter");
-        if (builder.getVLineDividerDrawable() == null) return;
+        if (builder.getVLineDividerDrawable() == null) {
+            return;
+        }
         int hLineSpacing = builder.getHLineSpacing() == 0 ? builder.getSpacing() : builder.getHLineSpacing();
         int vLineSpacing = builder.getVLineSpacing() == 0 ? builder.getSpacing() : builder.getVLineSpacing();
 
@@ -497,7 +501,9 @@ final class XDividerDecoration extends RecyclerView.ItemDecoration {
 
         int lastPosition = Objects.requireNonNull(parent.getAdapter(), "RecyclerView请设置Adapter").getItemCount() - 1;
         int position = parent.getChildAdapterPosition(view);
-        if (position > lastPosition) return;
+        if (position > lastPosition) {
+            return;
+        }
         GridLayoutManager layoutManager = (GridLayoutManager) parent.getLayoutManager();
         Objects.requireNonNull(layoutManager, "RecyclerView LayoutManager请设置GridLayoutManager");
         //规则是第n列item的outRect.right + 第n+1列的outRect.left 等于 spacing，以此类推
@@ -586,7 +592,9 @@ final class XDividerDecoration extends RecyclerView.ItemDecoration {
      */
     private void drawHDividerForHGrid(Canvas c, RecyclerView parent, XGridBuilder builder) {
         Objects.requireNonNull(builder, "GridLinearLayoutManage分割线必须设置GridBuilder");
-        if (builder.getHLineDividerDrawable() == null) return;
+        if (builder.getHLineDividerDrawable() == null) {
+            return;
+        }
         int hLineSpacing = builder.getHLineSpacing() == 0 ? builder.getSpacing() : builder.getHLineSpacing();
         int vLineSpacing = builder.getVLineSpacing() == 0 ? builder.getSpacing() : builder.getVLineSpacing();
 
@@ -654,7 +662,9 @@ final class XDividerDecoration extends RecyclerView.ItemDecoration {
      */
     private void drawVDividerForHGrid(Canvas c, RecyclerView parent, XGridBuilder builder) {
         Objects.requireNonNull(builder, "GridLinearLayoutManage分割线必须设置GridBuilder");
-        if (builder.getVLineDividerDrawable() == null) return;
+        if (builder.getVLineDividerDrawable() == null) {
+            return;
+        }
         int hLineSpacing = builder.getHLineSpacing() == 0 ? builder.getSpacing() : builder.getHLineSpacing();
         int vLineSpacing = builder.getVLineSpacing() == 0 ? builder.getSpacing() : builder.getVLineSpacing();
 
@@ -740,8 +750,9 @@ final class XDividerDecoration extends RecyclerView.ItemDecoration {
 
         int lastPosition = Objects.requireNonNull(parent.getAdapter(), "RecyclerView请设置Adapter").getItemCount() - 1;
         int position = parent.getChildAdapterPosition(view);
-        if (position > lastPosition) return;
-
+        if (position > lastPosition) {
+            return;
+        }
         StaggeredGridLayoutManager layoutManager = (StaggeredGridLayoutManager) parent.getLayoutManager();
         Objects.requireNonNull(layoutManager, "RecyclerView LayoutManager请设置StaggeredGridLayoutManager");
         // 瀑布流获取列方式不一样
@@ -840,9 +851,9 @@ final class XDividerDecoration extends RecyclerView.ItemDecoration {
         /**
          * XDividerDecoration初始化
          *
-         * @return
+         * @return RecyclerView.ItemDecoration
          */
-        public XDividerDecoration build() {
+        public RecyclerView.ItemDecoration build() {
             return new XDividerDecoration().bind(this);
         }
 
