@@ -52,7 +52,6 @@ public class StaggeredGridActivity extends AppCompatActivity {
                 recyclerView.addItemDecoration(bindXStaggeredGrid().build());
                 mAdapter = new StaggeredGridAdapter(R.layout.item_gird_horizontal_list, getData());
                 recyclerView.setAdapter(mAdapter);
-
             }
         });
 
@@ -90,7 +89,7 @@ public class StaggeredGridActivity extends AppCompatActivity {
     }
 
 
-    public class StaggeredGridAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
+    public static class StaggeredGridAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
 
         public StaggeredGridAdapter(int layoutResId, @Nullable List<String> data) {
             super(layoutResId, data);

@@ -24,27 +24,45 @@ import androidx.core.content.ContextCompat;
  */
 public final class XLinearBuilder extends XDividerDecoration.Builder implements ILDecoration {
 
-    //默认分割线的宽（高）度,单位像素px
+    /**
+     * 默认分割线的宽（高）度,单位像素px
+     */
     private int mSpacing = DividerHelper.dp2px(1);
-    //是否绘制最后一条分割线
+    /**
+     * 是否绘制最后一条分割线
+     */
     private boolean mShowLastLine = false;
-    //是否绘制第一个item的顶部分割线
+    /**
+     * 是否绘制第一个item的顶部分割线
+     */
     private boolean mShowFirstTopLine = false;
-    //是否绘制RecyclerView的左右padding（竖直）或上下padding（水平）
+    /**
+     * 是否绘制RecyclerView的左右padding（竖直）或上下padding（水平）
+     */
     private boolean mIsIncludeParentLTPadding = false;
     private boolean mIsIncludeParentRBPadding = false;
-    //分割线左右内边距（垂直）
+    /**
+     * 分割线左右内边距（垂直）
+     */
     private int mLeftPadding = 0;
     private int mRightPadding = 0;
-    //分割线上下内边距（水平）
+    /**
+     * 分割线上下内边距（水平）
+     */
     private int mTopPadding = 0;
     private int mBottomPadding = 0;
-    //分割线颜色或背景
+    /**
+     * 分割线颜色或背景
+     */
     private int mColor;
     private Drawable mDividerDrawable;
-    //不画分割线position的回调
+    /**
+     * 不画分割线position的回调
+     */
     private OnNoDividerPosition mOnNoDividerPosition;
-    //item分割线绘制回调
+    /**
+     * item分割线绘制回调
+     */
     private OnItemDivider mOnItemDivider;
 
     public XLinearBuilder(Context context) {
@@ -70,6 +88,7 @@ public final class XLinearBuilder extends XDividerDecoration.Builder implements 
     /**
      * 设置左右间距
      */
+    @Override
     public XLinearBuilder setPadding(float dpValuePadding) {
         setLeftPadding(dpValuePadding);
         setRightPadding(dpValuePadding);
@@ -81,6 +100,7 @@ public final class XLinearBuilder extends XDividerDecoration.Builder implements 
     /**
      * 设置左右间距
      */
+    @Override
     public XLinearBuilder setPadding(@DimenRes int dimenResId) {
         setLeftPadding(dimenResId);
         setRightPadding(dimenResId);
@@ -92,6 +112,7 @@ public final class XLinearBuilder extends XDividerDecoration.Builder implements 
     /**
      * 设置左间距
      */
+    @Override
     public XLinearBuilder setLeftPadding(float dpValuePadding) {
         mLeftPadding = (int) DividerHelper.applyDimension(dpValuePadding, TypedValue.COMPLEX_UNIT_DIP);
         return this;
@@ -100,6 +121,7 @@ public final class XLinearBuilder extends XDividerDecoration.Builder implements 
     /**
      * 设置右间距
      */
+    @Override
     public XLinearBuilder setRightPadding(float dpValuePadding) {
         mRightPadding = (int) DividerHelper.applyDimension(dpValuePadding, TypedValue.COMPLEX_UNIT_DIP);
         return this;
@@ -108,6 +130,7 @@ public final class XLinearBuilder extends XDividerDecoration.Builder implements 
     /**
      * 通过资源id设置左间距
      */
+    @Override
     public XLinearBuilder setLeftPadding(@DimenRes int dimenResId) {
         mLeftPadding = Resources.getSystem().getDimensionPixelSize(dimenResId);
         return this;
@@ -116,6 +139,7 @@ public final class XLinearBuilder extends XDividerDecoration.Builder implements 
     /**
      * 通过资源id设置右间距
      */
+    @Override
     public XLinearBuilder setRightPadding(@DimenRes int dimenResId) {
         mRightPadding = Resources.getSystem().getDimensionPixelSize(dimenResId);
         return this;
@@ -124,6 +148,7 @@ public final class XLinearBuilder extends XDividerDecoration.Builder implements 
     /**
      * 设置上间距
      */
+    @Override
     public XLinearBuilder setTopPadding(float dpValuePadding) {
         mTopPadding = (int) DividerHelper.applyDimension(dpValuePadding, TypedValue.COMPLEX_UNIT_DIP);
         return this;
@@ -132,6 +157,7 @@ public final class XLinearBuilder extends XDividerDecoration.Builder implements 
     /**
      * 设置下间距
      */
+    @Override
     public XLinearBuilder setBottomPadding(float dpValuePadding) {
         mBottomPadding = (int) DividerHelper.applyDimension(dpValuePadding, TypedValue.COMPLEX_UNIT_DIP);
         return this;
@@ -140,6 +166,7 @@ public final class XLinearBuilder extends XDividerDecoration.Builder implements 
     /**
      * 通过资源id设置上间距
      */
+    @Override
     public XLinearBuilder setTopPadding(@DimenRes int dimenResId) {
         mTopPadding = Resources.getSystem().getDimensionPixelSize(dimenResId);
         return this;
@@ -148,6 +175,7 @@ public final class XLinearBuilder extends XDividerDecoration.Builder implements 
     /**
      * 通过资源id设置下间距
      */
+    @Override
     public XLinearBuilder setBottomPadding(@DimenRes int dimenResId) {
         mBottomPadding = Resources.getSystem().getDimensionPixelSize(dimenResId);
         return this;
@@ -233,6 +261,7 @@ public final class XLinearBuilder extends XDividerDecoration.Builder implements 
      *
      * @return
      */
+    @Override
     public int getLeftPadding() {
         return mLeftPadding;
     }
@@ -242,6 +271,7 @@ public final class XLinearBuilder extends XDividerDecoration.Builder implements 
      *
      * @return
      */
+    @Override
     public int getRightPadding() {
         return mRightPadding;
     }
@@ -251,6 +281,7 @@ public final class XLinearBuilder extends XDividerDecoration.Builder implements 
      *
      * @return
      */
+    @Override
     public int getTopPadding() {
         return mTopPadding;
     }
@@ -260,6 +291,7 @@ public final class XLinearBuilder extends XDividerDecoration.Builder implements 
      *
      * @return
      */
+    @Override
     public int getBottomPadding() {
         return mBottomPadding;
     }
@@ -268,6 +300,7 @@ public final class XLinearBuilder extends XDividerDecoration.Builder implements 
     /**
      * 通过资源id设置颜色
      */
+    @Override
     public XLinearBuilder setColorRes(@ColorRes int colorResId) {
         setColor(ContextCompat.getColor(mContext, colorResId));
         return this;
@@ -276,6 +309,7 @@ public final class XLinearBuilder extends XDividerDecoration.Builder implements 
     /**
      * 设置颜色
      */
+    @Override
     public XLinearBuilder setColor(@ColorInt int color) {
         mColor = color;
         return this;
@@ -294,6 +328,7 @@ public final class XLinearBuilder extends XDividerDecoration.Builder implements 
     /**
      * 通过资源id设置Drawable
      */
+    @Override
     public XLinearBuilder setDrawableRes(@DrawableRes int drawableResId) {
         setDrawable(ContextCompat.getDrawable(mContext, drawableResId));
         return this;
@@ -302,6 +337,7 @@ public final class XLinearBuilder extends XDividerDecoration.Builder implements 
     /**
      * 设置分割线Drawable
      */
+    @Override
     public XLinearBuilder setDrawable(Drawable drawable) {
         mDividerDrawable = drawable;
         return this;
@@ -313,6 +349,7 @@ public final class XLinearBuilder extends XDividerDecoration.Builder implements 
      *
      * @return
      */
+    @Override
     public Drawable getDividerDrawable() {
         //创建Drawable
         if (mDividerDrawable == null) {

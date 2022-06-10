@@ -6,9 +6,9 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
 
-import androidx.core.content.ContextCompat;
-
 import com.littlejerk.rvdivider.DividerHelper;
+
+import androidx.core.content.ContextCompat;
 
 /**
  * @Author : HHotHeart
@@ -17,17 +17,25 @@ import com.littlejerk.rvdivider.DividerHelper;
  */
 public class LDecoration implements ILDecoration {
     private Context mContext;
-    //分割线左右内边距（垂直）
+    /**
+     * 分割线左右内边距（垂直）
+     */
     private int mLeftPadding = 0;
     private int mRightPadding = 0;
-    //分割线上下内边距（水平）
+    /**
+     * 分割线上下内边距（水平）
+     */
     private int mTopPadding = 0;
     private int mBottomPadding = 0;
-    //分割线颜色或背景
+    /**
+     * 分割线颜色或背景
+     */
     private int mColor;
     private Drawable mDividerDrawable;
 
-    //默认对边界不处理
+    /**
+     * 默认对边界不处理
+     */
     private Boolean isDrawLeft = null;
     private Boolean isDrawTop = null;
     private Boolean isDrawRight = null;
@@ -57,19 +65,6 @@ public class LDecoration implements ILDecoration {
     public Boolean[] getAroundEdge() {
         return new Boolean[]{isDrawLeft, isDrawTop, isDrawRight, isDrawBottom};
     }
-
-//
-//    @Override
-//    protected LDecoration setDividerSpace(float dpValueSpanSpace) {
-//        mSpanSpace = (int) DividerHelper.applyDimension(dpValueSpanSpace, TypedValue.COMPLEX_UNIT_DIP);
-//        return this;
-//    }
-//
-//    @Override
-//    protected LDecoration setDividerSpace(int dimenResId) {
-//        mSpanSpace = Resources.getSystem().getDimensionPixelSize(dimenResId);
-//        return this;
-//    }
 
     @Override
     public LDecoration setPadding(float dpValuePadding) {
@@ -160,11 +155,6 @@ public class LDecoration implements ILDecoration {
         mDividerDrawable = drawable;
         return this;
     }
-
-//    @Override
-//    public int getDividerSpace() {
-//        return mSpanSpace;
-//    }
 
     @Override
     public int getLeftPadding() {
