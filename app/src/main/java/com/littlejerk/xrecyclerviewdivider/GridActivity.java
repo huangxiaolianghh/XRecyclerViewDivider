@@ -51,7 +51,6 @@ public class GridActivity extends AppCompatActivity {
                 recyclerView.addItemDecoration(bindXGrid().build());
                 mAdapter = new GridAdapter(R.layout.item_gird_horizontal_list, getData());
                 recyclerView.setAdapter(mAdapter);
-
             }
         });
 
@@ -99,7 +98,7 @@ public class GridActivity extends AppCompatActivity {
     }
 
 
-    public class GridAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
+    public static class GridAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
 
         public GridAdapter(int layoutResId, @Nullable List<String> data) {
             super(layoutResId, data);

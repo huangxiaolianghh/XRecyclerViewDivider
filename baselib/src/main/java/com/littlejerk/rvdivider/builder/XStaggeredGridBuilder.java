@@ -15,13 +15,19 @@ import androidx.annotation.DimenRes;
  */
 public final class XStaggeredGridBuilder extends XDividerDecoration.Builder {
 
-    //分割线宽或高,mVLineSpacing||mHLineSpacing > mSpacing
+    /**
+     * 分割线宽或高,mVLineSpacing||mHLineSpacing > mSpacing
+     */
     private int mVLineSpacing;
     private int mHLineSpacing;
     private int mSpacing;
-    //是否需要画边界
+    /**
+     * 是否需要画边界
+     */
     private boolean mIsIncludeEdge;
-    //是否忽略fullSpan的情况
+    /**
+     * 是否忽略fullSpan的情况
+     */
     private boolean mIsIgnoreFullSpan = false;
 
     public XStaggeredGridBuilder(Context context) {
