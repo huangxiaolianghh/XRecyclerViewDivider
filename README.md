@@ -21,7 +21,7 @@ allprojects {
 
 ```java
 dependencies {
-	        implementation 'com.github.HHotHeart:XRecyclerViewDivider:1.0.1'
+	        implementation 'com.github.huangxiaolianghh:XRecyclerViewDivider:1.0.2'
 	}
 ```
 
